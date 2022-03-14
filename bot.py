@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 def register_all_middlewares(dp):
     dp.setup_middleware(DbMiddleware())
-    # dp.setup_middleware(BigBrother())
+    dp.setup_middleware(BigBrother())
     dp.setup_middleware(ThrottlingMiddleware())
 
 
@@ -36,9 +36,9 @@ def register_all_filters(dp):
 
 
 def register_all_handlers(dp):
-    #register_admin(dp)
+    # register_admin(dp)
     register_bot_start(dp)
-    # register_user(dp)
+    register_user(dp)
     register_testing(dp)
 
     register_answer(dp)

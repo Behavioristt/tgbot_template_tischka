@@ -1,10 +1,24 @@
 C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\Scripts\python.exe C:/Users/Master/PycharmProjects/tgbot_template_tischka/bot.py
-bot.py:54 #INFO     [2022-03-14 19:28:54,062] - __main__ - Starting bot
-dispatcher.py:358 #INFO     [2022-03-14 19:28:54,072] - aiogram.dispatcher.dispatcher - Start polling.
-test_filter.py:11 #INFO     [2022-03-14 19:29:34,052] - root - 4. Filter, data={}
-test_filter.py:12 #INFO     [2022-03-14 19:29:34,052] - root - Следующая точка: Process Message
-base_events.py:1729 #ERROR    [2022-03-14 19:29:34,052] - asyncio - Task exception was never retrieved
-future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'>=' not supported between instances of 'float' and 'str'")>
+bot.py:54 #INFO     [2022-03-14 22:30:22,171] - __main__ - Starting bot
+dispatcher.py:358 #INFO     [2022-03-14 22:30:22,185] - aiogram.dispatcher.dispatcher - Start polling.
+big_brother.py:12 #INFO     [2022-03-14 22:30:24,979] - root - [--------------Новый апдейт!----------------]
+big_brother.py:13 #INFO     [2022-03-14 22:30:24,979] - root - 1. Pre Process Update
+big_brother.py:14 #INFO     [2022-03-14 22:30:24,979] - root - Следующая точка: Process Update
+big_brother.py:27 #INFO     [2022-03-14 22:30:24,979] - root - 2. Process Update, data={'middleware_data': 'Это дойдет до on_post_process_update'}
+big_brother.py:28 #INFO     [2022-03-14 22:30:24,979] - root - Следующая точка: Pre Process Message
+big_brother.py:31 #INFO     [2022-03-14 22:30:24,980] - root - 3. Pre Process Message, data={}
+big_brother.py:32 #INFO     [2022-03-14 22:30:24,980] - root - Следующая точка: Filters, Process Message.
+test_filter.py:11 #INFO     [2022-03-14 22:30:24,980] - root - 4. Filter, data={'middleware_data': 'Это дойдет до on_process_message'}
+test_filter.py:12 #INFO     [2022-03-14 22:30:24,980] - root - Следующая точка: Process Message
+big_brother.py:36 #INFO     [2022-03-14 22:30:24,980] - root - 5. Pre Process Message
+big_brother.py:37 #INFO     [2022-03-14 22:30:24,980] - root - Следующая точка Handler
+big_brother.py:41 #INFO     [2022-03-14 22:30:24,980] - root - 7. Post process Message, data={'middleware_data': 'Это попадет в хендлер', 'state': <aiogram.dispatcher.storage.FSMContext object at 0x00000232482CF9D0>, 'raw_state': None, 'command': Command.CommandObj(prefix='/', command='start', mention=''), 'from_filter': 'Данные из фильтра'}, data_from_handler=[]
+big_brother.py:42 #INFO     [2022-03-14 22:30:24,980] - root - Следующая точка: Post Process Update
+big_brother.py:45 #INFO     [2022-03-14 22:30:24,980] - root - 8. Post process Update, data={'middleware_data': 'Это дойдет до on_post_process_update'}, data_from_handler=[]
+big_brother.py:46 #INFO     [2022-03-14 22:30:24,980] - root - [-------------------Выход------------------]
+
+base_events.py:1729 #ERROR    [2022-03-14 22:30:24,980] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'>=' not supported between instances of 'float' and 'str'")>
 Traceback (most recent call last):
   File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
