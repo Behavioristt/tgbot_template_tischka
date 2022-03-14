@@ -39,6 +39,7 @@ def load_config(path: str = None):
             token=env.str("BOT_TOKEN"),
             admin_ids=list(map(int, env.list("ADMINS"))),
             use_redis=env.bool("USE_REDIS"),
+
         ),
         db=DbConfig(
             host=env.str('DB_HOST'),
@@ -48,3 +49,6 @@ def load_config(path: str = None):
         ),
         misc=Miscellaneous()
     )
+
+
+banned_user = 242342342, 234423542534
