@@ -12,7 +12,7 @@ async def bot_start(message: types.Message, middleware_data, from_filter):
     await message.answer(f"Привет, {message.from_user.full_name}! \n{middleware_data=} \n{from_filter=}")
     logging.info(f"6. Handler")
     logging.info("Следующая точка: Post Process Message")
-    return {"from_handler": "Данные из хендлера"} fbd
+    return {"from_handler": "Данные из хендлера"}
 
 
 def register_bot_start(dp: Dispatcher):
