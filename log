@@ -1,0 +1,33 @@
+C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\Scripts\python.exe C:/Users/Master/PycharmProjects/tgbot_template_tischka/bot.py
+bot.py:54 #INFO     [2022-03-14 19:28:54,062] - __main__ - Starting bot
+dispatcher.py:358 #INFO     [2022-03-14 19:28:54,072] - aiogram.dispatcher.dispatcher - Start polling.
+test_filter.py:11 #INFO     [2022-03-14 19:29:34,052] - root - 4. Filter, data={}
+test_filter.py:12 #INFO     [2022-03-14 19:29:34,052] - root - Следующая точка: Process Message
+base_events.py:1729 #ERROR    [2022-03-14 19:29:34,052] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'>=' not supported between instances of 'float' and 'str'")>
+Traceback (most recent call last):
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 114, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\tgbot\middlewares\throttling.py", line 52, in on_process_message
+    await self.throttle(message)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\tgbot\middlewares\throttling.py", line 28, in throttle
+    await dp.throttle(key, rate=limit)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\utils\deprecated.py", line 122, in wrapped
+    return await func(*args, **kwargs)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\utils\deprecated.py", line 122, in wrapped
+    return await func(*args, **kwargs)
+  File "C:\Users\Master\PycharmProjects\tgbot_template_tischka\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 1303, in throttle
+    result = delta >= rate or delta <= 0
+TypeError: '>=' not supported between instances of 'float' and 'str'
