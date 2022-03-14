@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 def register_all_middlewares(dp):
     dp.setup_middleware(DbMiddleware())
-    dp.setup_middleware(BigBrother())
+    # dp.setup_middleware(BigBrother())
     dp.setup_middleware(ThrottlingMiddleware())
 
 

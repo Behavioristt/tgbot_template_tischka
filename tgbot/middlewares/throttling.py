@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from typing import Union
 
 from aiogram import types, Dispatcher
@@ -43,7 +44,8 @@ class ThrottlingMiddleware(BaseMiddleware):
         await asyncio.sleep(delta)
 
         thr = await dispatcher.check_key(key)
-        if thr.exceeded_count == thr.exceeded_count:
+        logging.info(f"{thr.exceeded_count=}. {throttled.exceeded_count=}")
+        if thr.exceeded_count == throttled.exceeded_count:
             await msg.reply("Все, теперь отвечаю.")
 
     async def on_process_message(self, message, data):
