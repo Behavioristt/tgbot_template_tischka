@@ -1,14 +1,14 @@
 from aiogram import Dispatcher, types
 from aiogram.types import Message
 
-
 from tgbot.filters.start import IsPrivate
 
 
 async def admin_start(message: Message):
     await message.reply("Hello, admin!")
 
-async def admin_chat_secret(message:types.Message):
+
+async def admin_chat_secret(message: types.Message):
     await message.answer("Секретный текст для админов в личной переписке")
 
 

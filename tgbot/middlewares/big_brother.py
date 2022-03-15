@@ -44,3 +44,6 @@ class BigBrother(BaseMiddleware):
     async def on_post_process_update(self, message: types.Update, data_from_handler: list, data: dict):
         logging.info(f"8. Post process Update, {data=}, {data_from_handler=}")
         logging.info(f"[-------------------Выход------------------]\n")
+
+    async def on_pre_process_callback_query(self, cq: types.CallbackQuery, data: dict):
+        await cq.answer()

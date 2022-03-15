@@ -27,7 +27,7 @@ class ThrottlingMiddleware(BaseMiddleware):
         key = getattr(handler, "throttling_key", f"{self.prefix}_{handler.__name__}")
 
         try:
-            await dp.throttle(key, rate=5)
+            await dp.throttle(key, rate=limit)
         except Throttled as t:
             await self.target_throttled(target, t, dp, key)
             raise CancelHandler()
