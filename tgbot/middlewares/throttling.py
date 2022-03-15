@@ -6,6 +6,8 @@ from aiogram import types, Dispatcher
 from aiogram.dispatcher import DEFAULT_RATE_LIMIT
 from aiogram.dispatcher.handler import current_handler, CancelHandler
 from aiogram.dispatcher.middlewares import BaseMiddleware
+
+
 from aiogram.utils.exceptions import Throttled
 
 
@@ -25,7 +27,7 @@ class ThrottlingMiddleware(BaseMiddleware):
         key = getattr(handler, "throttling_key", f"{self.prefix}_{handler.__name__}")
 
         try:
-            await dp.throttle(key, rate=limit)
+            await dp.throttle(key, rate=5)
         except Throttled as t:
             await self.target_throttled(target, t, dp, key)
             raise CancelHandler()
