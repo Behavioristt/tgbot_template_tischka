@@ -20,6 +20,7 @@ class User:
         user = cls.get(telegram_id)
         if user is None:
             user = cls.create(telegram_id)
+        return user
 
     def block(self):
         self.allowed = False

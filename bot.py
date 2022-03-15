@@ -20,6 +20,7 @@ from tgbot.handlers.user import register_user
 from tgbot.middlewares.acl import ACLMiddleware
 from tgbot.middlewares.big_brother import BigBrother
 from tgbot.middlewares.db import DbMiddleware
+from tgbot.middlewares.sentinel import Sentinel
 from tgbot.middlewares.throttling import ThrottlingMiddleware
 
 logger = logging.getLogger(__name__)
@@ -28,8 +29,10 @@ logger = logging.getLogger(__name__)
 def register_all_middlewares(dp):
     dp.setup_middleware(DbMiddleware())
     dp.setup_middleware(ACLMiddleware())
+    dp.setup_middleware(Sentinel())
     dp.setup_middleware(BigBrother())
     dp.setup_middleware(ThrottlingMiddleware())
+
 
 
 def register_all_filters(dp):
