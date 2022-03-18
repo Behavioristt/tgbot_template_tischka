@@ -5,11 +5,12 @@ from aiogram.dispatcher.filters import Command
 from tgbot.misc.test import Test
 
 
-async def enter_test(message: types.Message):
+async def enter_test(message: types.Message, state: FSMContext):
+    # data = await state.get_data()
+    # await message.answer(str(data))
     await message.answer("Вы начали тестирование\n"
                          "Вопрос 1: \n"
                          "Как тебя зовут?")
-
 
     await Test.Q1.set()
 
@@ -33,7 +34,7 @@ async def answer_Q2(message: types.Message, state: FSMContext):
     await message.answer(f'Ответ 1: {answer1}')
     await message.answer(f'Ответ 2: {answer2}')
 
-    await state.reset_state()
+    await state.reset_state(with_data=False)
 
 
 def register_testing(dp: Dispatcher):

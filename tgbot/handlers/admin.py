@@ -13,5 +13,5 @@ async def admin_chat_secret(message: types.Message):
 
 
 def register_admin(dp: Dispatcher):
-    dp.register_message_handler(admin_start, commands=["start"], state="*", is_admin=True)
+    dp.register_message_handler(admin_start, commands=["admin"], state="*", is_admin=True)
     dp.register_message_handler(admin_chat_secret, IsPrivate(), user_id=[278660078], text="secret")

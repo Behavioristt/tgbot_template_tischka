@@ -14,7 +14,9 @@ from tgbot.handlers.admin import register_admin
 from tgbot.handlers.answer import register_answer
 from tgbot.handlers.echo import register_echo
 from tgbot.handlers.error_handler import register_errors_handler
+from tgbot.handlers.menu import register_show_menu
 from tgbot.handlers.start import register_bot_start
+from tgbot.handlers.task_2 import register_task2
 from tgbot.handlers.testing import register_testing
 from tgbot.handlers.user import register_user
 from tgbot.middlewares.acl import ACLMiddleware
@@ -34,7 +36,6 @@ def register_all_middlewares(dp):
     dp.setup_middleware(ThrottlingMiddleware())
 
 
-
 def register_all_filters(dp):
     dp.filters_factory.bind(AdminFilter)
     dp.filters_factory.bind(IsPrivate)
@@ -42,10 +43,12 @@ def register_all_filters(dp):
 
 
 def register_all_handlers(dp):
-    # register_admin(dp)
+    register_admin(dp)
     register_bot_start(dp)
     register_user(dp)
     register_testing(dp)
+    register_task2(dp)
+    register_show_menu(dp)
 
     register_answer(dp)
     register_acl_test(dp)
